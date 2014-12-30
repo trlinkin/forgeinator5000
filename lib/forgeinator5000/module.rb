@@ -69,7 +69,7 @@ module Forgeinator5000
     # Returns array of Forgeinator5000::Module instances
     def self.all load=true
       modules = []
-      Dir.glob("modules/*.tar.gz").each do |mod|
+      Dir.glob("/etc/forgeinator5000/modules/*.tar.gz").each do |mod|
         base = File.basename(mod, '.tar.gz')
         version = base.split('-')[2]
         name = base.scan(/^\w*-\w*/).flatten[0]
