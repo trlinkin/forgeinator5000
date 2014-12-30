@@ -1,5 +1,4 @@
 language: ruby
-install: bundle install --with-development-dependencies
 script: "rake spec"
 rvm:
   - 2.0.0
