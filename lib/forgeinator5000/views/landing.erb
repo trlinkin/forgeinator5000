@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>FORGEINATOR5000</title>
+    <style>
+      body {
+        background-color: #EEF2F4;
+      }
+      #wrapper {
+        width: 800px;
+        margin: auto;
+      }
+      #header {
+        color: #E0EAEA;
+        font-size: 60px;
+        font-family: "Trebuchet MS";
+      }
+      #list {
+        color: #F38F66;
+        font-size: 18px;
+        font-family: "Andale Mono";
+      }
+    </style>
+    <body>
+      <div id="wrapper">
+        <div id="header">FORGEINATOR 5000</div>
+        <div id="list">
+          <ul>
+            <% Forgeinator5000::Module.all(false).sort_by {|mod| mod['name'] }.each do |mod|  %>
+            <li><%= mod['name'] %> @<%= mod['version'] %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </body>
+  </head>
+</html>

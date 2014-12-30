@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "forgeinator5000/cli"
+
+cli = Forgeinator5000::CLI.new
+cli.cri.run(ARGV)
