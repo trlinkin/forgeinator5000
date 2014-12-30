@@ -16,7 +16,7 @@ module Forgeinator5000
     end
 
     get '/v3/files/:file' do
-      send_file "modules/#{params[:file]}"
+      send_file "/etc/forgeinator5000/modules/#{params[:file]}"
     end
 
     get '/v3/modules' do
