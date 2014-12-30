@@ -1,4 +1,5 @@
 # forge-inator5000
+[![Build Status](https://travis-ci.org/jolshevski/forgeinator5000.svg)](https://travis-ci.org/jolshevski/forgeinator5000)
 
 Your own personal Puppet Forge.
 
