@@ -16,14 +16,12 @@ module Forgeinator5000
 
     def instantiate_modules
       @modules.map! do |mod|
-        puts 'found a module'
         Forgeinator5000::Module.new(mod['name'], mod['version'])
       end
     end
 
     def download_modules
       @modules.each do |mod|
-        puts 'downloading a module'
         begin
         mod.download
         rescue Exception => e
@@ -35,7 +33,6 @@ module Forgeinator5000
     def get_modules
       raise "You must configure a control repository before attempting to update inventory" unless @repo
       @modules = Forgeinator5000::Controlrepo.new(@repo).puppetfiles.map {|pf| pf.modules }
-      puts Forgeinator5000::Controlrepo.new(@repo)
       @modules.flatten!(1)
       @modules.uniq!
     end
