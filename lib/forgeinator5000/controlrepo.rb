@@ -28,10 +28,7 @@ module Forgeinator5000
       @puppetfiles = []
       @repo.branches.remote.each do |branch|
         unless branch.name =~ /->/
-          begin
-            @puppetfiles << Forgeinator5000::Puppetfile.new(@repo.object("#{branch}:Puppetfile").contents)
-          rescue Exception => e
-          end
+          @puppetfiles << Forgeinator5000::Puppetfile.new(@repo.object("#{branch}:Puppetfile").contents)
         end
       end
     end

@@ -9,6 +9,7 @@ define do
 
     require "forgeinator5000/updator"
     begin
+      puts "running"
       updator = Forgeinator5000::Updator.new repo
       updator.load_config unless repo
       updator.get_modules
