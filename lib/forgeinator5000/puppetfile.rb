@@ -14,9 +14,9 @@ module Forgeinator5000
       when /\d.\d.\d/
         @modules << { 'name' => name.gsub('/', '-'), 'version' => args }
       when nil
-        puts "Skipping module #{name} because no version was specified"
+        Log.warn "Skipping module #{name} because no version was specified"
       else
-        puts "Skipping module #{name} because it doesn't appear to be sourced from the forge"
+        Log.warn "Skipping module #{name} because it doesn't appear to be sourced from the forge"
       end
     end
 
