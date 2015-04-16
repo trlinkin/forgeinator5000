@@ -35,6 +35,10 @@ module Forgeinator5000
     def mod(name, args = nil)
       @pf.add_module(name, args)
     end
+
+    def forge(uri)
+      # do nothing - compatability with R10K Puppetfile DSL
+    end
   end
 end
 

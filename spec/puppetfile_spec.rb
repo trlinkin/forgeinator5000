@@ -8,6 +8,8 @@ describe Forgeinator5000::Puppetfile do
   describe "#initialize" do
     context "when given a valid puppetfile" do
       pf = """
+       forge 'https://forgeapi.puppetlabs.com'
+
         mod 'testmod', '1.2.3'
         mod 'testuser-testmod', '2.2.3'
         mod 'testuser2/testmod2', '3.2.3'
@@ -19,6 +21,8 @@ describe Forgeinator5000::Puppetfile do
 
     context "when given an invalid puppetfile" do
       pf = """
+       forge 'https://forgeapi.puppetlabs.com'
+
         mod 'testmod', '1.2.3'
         mod 'testuser-testmod', '2.2.3'
         mod 'testuser2/testmod2', '3.2.3'
