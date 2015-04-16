@@ -52,40 +52,28 @@ describe Forgeinator5000::Puppetfile do
     context "without a version" do
       it "logs a warning" do
         logger = object_double("Log", :warn => nil).as_stubbed_const
-        subject.add_module 'testuser/testmod'
-        expect(logger).to have_received(:warn).with("Skipping module testuser/testmod because no version was specified")
-      end
-    end
-
-    context "without a version" do
-      it "logs a warning" do
-        logger = object_double("Log", :warn => nil).as_stubbed_const
-        subject.add_module 'testuser/testmod'
-        expect(logger).to have_received(:warn).with("Skipping module testuser/testmod because no version was specified")
+        expect{ subject.add_module 'testuser/testmod' }.to output("Skipping module testuser/testmod because no version was specified\n").to_stdout
       end
     end
 
     context "with an invalid version" do
       it "logs a warning" do
         logger = object_double("Log", :warn => nil).as_stubbed_const
-        subject.add_module 'testuser/testmod', '1.2'
-        expect(logger).to have_received(:warn).with("Skipping module testuser/testmod because it doesn't appear to be sourced from the forge")
+        expect{ subject.add_module 'testuser/testmod', '1.2' }.to output("Skipping module testuser/testmod because it doesn't appear to be sourced from the forge\n").to_stdout
       end
     end
 
     context "with an array as second param" do
       it "logs a warning" do
         logger = object_double("Log", :warn => nil).as_stubbed_const
-        subject.add_module 'testuser/testmod', []
-        expect(logger).to have_received(:warn).with("Skipping module testuser/testmod because it doesn't appear to be sourced from the forge")
+        expect{ subject.add_module 'testuser/testmod', [] }.to output("Skipping module testuser/testmod because it doesn't appear to be sourced from the forge\n").to_stdout
       end
     end
 
     context "with a hash as second param" do
       it "logs a warning" do
         logger = object_double("Log", :warn => nil).as_stubbed_const
-        subject.add_module 'testuser/testmod', {}
-        expect(logger).to have_received(:warn).with("Skipping module testuser/testmod because it doesn't appear to be sourced from the forge")
+        expect{ subject.add_module 'testuser/testmod', {} }.to output("Skipping module testuser/testmod because it doesn't appear to be sourced from the forge\n").to_stdout
       end
     end
   end
