@@ -39,6 +39,10 @@ module Forgeinator5000
     def forge(uri)
       # do nothing - compatability with R10K Puppetfile DSL
     end
+
+    def moduledir(dir)
+      # do nothing - compatability with R10K Puppetfile DSL
+    end
   end
 end
 

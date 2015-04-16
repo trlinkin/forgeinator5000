@@ -10,6 +10,8 @@ describe Forgeinator5000::Puppetfile do
       pf = """
        forge 'https://forgeapi.puppetlabs.com'
 
+       moduledir '/tmp/modules'
+
         mod 'testmod', '1.2.3'
         mod 'testuser-testmod', '2.2.3'
         mod 'testuser2/testmod2', '3.2.3'
